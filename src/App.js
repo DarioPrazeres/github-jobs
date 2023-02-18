@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import useFetch from './component/useFetch';
 
-class App extends Component {
-  render() {
+function App(){
+  const [data] = useFetch("https://remotive.com/api/remote-jobs?limit=10") //useFetch("https://api.adzuna.com/v1/api/jobs/gb/search/1?app_id=6cc0640d&app_key=d4a87c64ee944f8b5f4dfb052eecbcd8");
+  console.log(data)
     return (
       <h1>
         Hello World!
       </h1>
     );
-  }
 }
 
 export default App;
+//Key=d4a87c64ee944f8b5f4dfb052eecbcd8
+//id = 6cc0640d
+
