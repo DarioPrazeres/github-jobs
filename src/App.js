@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import useFetch from './component/useFetch';
 
 function App(){
