@@ -1,5 +1,24 @@
-body {
+*{
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+body {
   font-family: "Poppins";
+}
+h1{
+  color: #282538;
+  font-size: 30px;
+  font-style: normal;
+  line-height: 36px;
+}
+h1 span{
+  font-weight: 300;
+}
+header{
+  padding: 10px;
+  border: solid 1px red;
+}
+header h1{
+  margin: 15px 0px 0px 100px;
 }
