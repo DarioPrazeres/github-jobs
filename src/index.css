@@ -1,24 +1,74 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   font-family: "Poppins";
 }
-h1{
+
+h1 {
   color: #282538;
   font-size: 30px;
   font-style: normal;
   line-height: 36px;
 }
-h1 span{
+
+h1 span {
   font-weight: 300;
 }
-header{
-  padding: 10px;
-  border: solid 1px red;
+
+header, section {
+  margin: 50px 0px 40px 100px;
 }
-header h1{
-  margin: 15px 0px 0px 100px;
+
+/*-------------Search section----------------*/
+.search {
+  height: 140px;
+  background: url(./img/backgroundImg.png);
+  margin: 0px 100px 0px 100px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.iconBag{
+  margin-left: 15px;
+}
+
+.formSearch {
+  width: 70%;
+  height: 60px;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.btn-search {
+  border: none;
+  width: 146px;
+  height: 46px;
+  border-radius: 4px;
+  background: #1e86ff;
+  color: #fff;
+  font-size: 14px;
+  position: absolute;
+  right: 5px;
+}
+
+.inputSearch {
+  border: none;
+  font-family: 'Roboto' sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 14px;
+  margin-left: 10px;
+  width: 250px;
+  height: 25px;
 }
