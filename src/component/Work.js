@@ -3,8 +3,7 @@ import SideBar from "./SideBar";
 import WorkList from "./WorkList";
 function Work(){
     return (
-        <section>
-            <h1>Work Section</h1>
+        <section className="workBody">
             <SideBar/>
             <WorkList/>
         </section>

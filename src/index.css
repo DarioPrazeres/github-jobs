@@ -6,6 +6,7 @@
 
 body {
   font-family: "Poppins";
+  background: #b7bcce00;
 }
 
 h1 {
@@ -71,4 +72,36 @@ header, section {
   margin-left: 10px;
   width: 250px;
   height: 25px;
+}
+/*----------Work Body ---------------*/
+.sidebar{
+  border: solid red 1px;
+  width: 30%;
+}
+
+.worklist{
+  border: solid red 1px;
+  width: 70%;
+}
+
+.workBody{
+  display: flex;
+  border: solid 1px black;
+  margin: 50px 100px 0px 100px;
+}
+.form-div{
+  display: flex;
+  align-items: center;
+}
+.form-div label{
+  margin-left: 5px;
+  color:#334680;
+  font-size: 16px;
+  font-weight: 500;
+}
+.check{
+  width: 18px;
+  height: 18px;
+  border: 1px solid #B9BDCF;
+  border-radius: 2px;
 }
