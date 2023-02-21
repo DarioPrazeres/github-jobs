@@ -1,4 +1,5 @@
 import React from "react";
+import iconWorld from "../img/world.png"
 function SideBar() {
     return (
         <aside className="sidebar">
@@ -8,7 +9,7 @@ function SideBar() {
             </div>
             <h3>Location</h3>
             <div className="form-city">
-                <img src="" alt="world Icon" className="worldIcon"/>
+                <img src={iconWorld} alt="world Icon" className="worldIcon"/>
                 <input type="text"placeholder="City, state, zip code or country" />
             </div>
             <div className="listCities">
@@ -20,10 +21,11 @@ function SideBar() {
 }
 function City(){
     return(
-        <div>
+        <label className="container">
             <input type="checkbox" />
-            <label>London</label>
-        </div>
+            <span className="checkmark"></span>
+            London
+        </label>
     )
 }
 export default SideBar;
