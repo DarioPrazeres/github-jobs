@@ -10,7 +10,7 @@ function SideBar() {
             <h3>Location</h3>
             <div className="form-city">
                 <img src={iconWorld} alt="world Icon" className="worldIcon"/>
-                <input type="text"placeholder="City, state, zip code or country" />
+                <input type="text"placeholder="City, state, zip code or country" className="input-City" />
             </div>
             <div className="listCities">
                 <City/>

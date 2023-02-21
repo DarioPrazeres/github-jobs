@@ -20,7 +20,8 @@ h1 span {
   font-weight: 300;
 }
 
-header, section {
+header,
+section {
   margin: 50px 0px 40px 100px;
 }
 
@@ -35,7 +36,7 @@ header, section {
   align-items: center;
 }
 
-.iconBag{
+.iconBag {
   margin-left: 15px;
 }
 
@@ -73,38 +74,55 @@ header, section {
   width: 250px;
   height: 25px;
 }
+
 /*----------Work Body ---------------*/
-.sidebar{
+.sidebar {
   width: 30%;
 }
 
-.worklist{
+.sidebar h3 {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 21px;
+  text-transform: uppercase;
+  color: #B9BDCF;
+  margin: 10px 0px 10px 0px;
+}
+
+.worklist {
   width: 68%;
 }
 
-.workBody{
+.workBody {
   display: flex;
   justify-content: space-around;
   border: solid 1px black;
   margin: 50px 100px 0px 100px;
 }
-.form-div{
+
+.form-div {
   display: flex;
   align-items: center;
+  margin-bottom: 50px;
 }
-.form-div label{
+
+.form-div label {
   margin-left: 5px;
-  color:#334680;
+  color: #334680;
   font-size: 16px;
   font-weight: 500;
 }
-.check{
+
+.check {
   width: 18px;
   height: 18px;
   border: 1px solid #B9BDCF;
   border-radius: 2px;
 }
-.form-city{
+
+.form-city {
   background: #fff;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
   border-radius: 4px;
@@ -112,9 +130,18 @@ header, section {
   display: flex;
   align-items: center;
   padding: 3px;
+  margin: 10px 0px 30px 0px;
+}
+.input-City{
+  margin-left: 5px;
+  font-size: 14px;
+  width: 60%;
+  outline: none;
+  border: none;
 }
 .container {
-  display: block;
+  display: flex;
+  align-items: center;
   position: relative;
   padding-left: 35px;
   margin-bottom: 12px;
@@ -124,6 +151,8 @@ header, section {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  color: #334680;
+  font-size: 14px;
 }
 
 /* Hide the browser's default radio button */
@@ -140,19 +169,19 @@ header, section {
   position: absolute;
   top: 0;
   left: 0;
-  height: 25px;
-  width: 25px;
+  height: 20px;
+  width: 20px;
   background-color: #eee;
   border-radius: 50%;
 }
 
 /* On mouse-over, add a grey background color */
-.container:hover input ~ .checkmark {
+.container:hover input~.checkmark {
   background-color: #ccc;
 }
 
 /* When the radio button is checked, add a blue background */
-.container input:checked ~ .checkmark {
+.container input:checked~.checkmark {
   background-color: #2196F3;
 }
 
@@ -164,16 +193,16 @@ header, section {
 }
 
 /* Show the indicator (dot/circle) when checked */
-.container input:checked ~ .checkmark:after {
+.container input:checked~.checkmark:after {
   display: block;
 }
 
 /* Style the indicator (dot/circle) */
 .container .checkmark:after {
-  top: 9px;
-  left: 9px;
-  width: 8px;
-  height: 8px;
+  top: 8px;
+  left: 8px;
+  width: 5px;
+  height: 5px;
   border-radius: 50%;
   background: white;
 }

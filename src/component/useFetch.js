@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-
+//https://serpapi.com/search.json?engine=google_jobs&q=webdev&hl=en
 const useFetch = (url) => {
   const [data, setData] = useState(null);
 
