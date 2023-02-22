@@ -1,9 +1,9 @@
 import React from "react";
-
+import Vacancy from "./Vacancy";
 function WorkList(){
     return(
         <div className="worklist">
-            <h1>I am WorkList</h1>
+            <Vacancy/>
         </div>
     );
 }

@@ -2,11 +2,12 @@ import React from 'react';
 import Header from './component/Header';
 import Search from './component/Search';
 import Work from './component/Work';
+
 function App() {
   return (
     <section>
-      <Header />
-      <Search />
+      <Header/>
+      <Search/>
       <Work/>
     </section>
   );
