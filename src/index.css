@@ -262,6 +262,28 @@ section {
 .data-info img{
   margin: 3px;
 }
+/*------------Control STle-------*/
+.control{
+  width: 300px;
+  border: solid 1px red;
+  display: grid;
+  grid-template-columns: repeat(10, 36px);
+  justify-content: space-between;
+}
+.seta{
+  border: 1px solid #B7BCCE;
+  border-radius: 4px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #B7BCCE;
+}
+.active{
+  background: #1E86FF;
+}
+
 /*-----------Footer --------------*/
 footer {
   margin-top: 50px;

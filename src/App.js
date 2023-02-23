@@ -1,21 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { createContext } from 'react';
 import Header from './component/Header';
 import Search from './component/Search';
 import Work from './component/Work';
 import Footer from './component/Footer';
 import useFetch from './component/useFetch';
-
+import Control from './component/Control';
 const DataContext = createContext();
 function App() {
   const [data] = useFetch('https://remotive.com/api/remote-jobs?limit=100')
-  console.log(data && data.jobs[0])
+  const [number, setNumber] = useState(1) 
+  //console.log(data && data.jobs[0])
   return (
-    <DataContext.Provider value={{data}}>
+    <DataContext.Provider value={{data, number, setNumber}}>
       <section>
         <Header />
         <Search />
         <Work />
+        <Control />
         <Footer />
       </section>
     </DataContext.Provider>

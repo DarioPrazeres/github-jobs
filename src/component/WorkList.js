@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { DataContext } from "../App";
 function WorkList() {
     const { data } = useContext(DataContext);
-    console.log(data)
+    //console.log(data)
     return (
         <div className="worklist">
             {data &&
