@@ -4,14 +4,11 @@ import Header from './component/Header';
 import Search from './component/Search';
 import Work from './component/Work';
 import Footer from './component/Footer';
-import useFetch from './component/useFetch';
 
 
 const DataContext = createContext();
-function App() {
-  const [data] = useFetch("https://remotive.com/api/remote-jobs?limit=10");
-  return (
-    <DataContext.Provider value={{ data }}>
+function App() {  return (
+    <DataContext.Provider value={{ }}>
       <section>
         <Header />
         <Search />
@@ -21,7 +18,9 @@ function App() {
     </DataContext.Provider>
   );
 }
-
+function endpoint(){
+  
+}
 
 export { DataContext };
 export default App;
