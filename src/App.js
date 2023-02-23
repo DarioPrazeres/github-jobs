@@ -4,12 +4,14 @@ import Header from './component/Header';
 import Search from './component/Search';
 import Work from './component/Work';
 import Footer from './component/Footer';
-
+import useFetch from './component/useFetch';
 
 const DataContext = createContext();
 function App() {
+  const [data] = useFetch('https://remotive.com/api/remote-jobs?limit=100')
+  console.log(data && data.jobs[0])
   return (
-    <DataContext.Provider value={{}}>
+    <DataContext.Provider value={{data}}>
       <section>
         <Header />
         <Search />

@@ -2,12 +2,32 @@ import React from "react";
 import Vacancy from "./Vacancy";
 import { useContext } from "react";
 import { DataContext } from "../App";
-function WorkList(){
-    //const {data} = useContext(DataContext);
-    return(
+function WorkList() {
+    const { data } = useContext(DataContext);
+    console.log(data)
+    return (
         <div className="worklist">
-            <Vacancy/>
+            {data &&
+                data.jobs.map((item, index) => {
+                    if(index<=4){
+                        return <Vacancy
+                        key={item.id}
+                        nameEnterprise={item.company_name}
+                        logo={item.company_logo}
+                        namePosition={item.title}
+                        status={item.job_type||'NOT FOUND'}
+                        cityName={item.candidate_required_location||'WorldWide'
+                        }
+                        day={daysAgo(item.publication_date)}
+                    />;
+                    }
+                })}
         </div>
     );
+}
+function daysAgo(data){
+    var info = String(data);
+    info.split('-');
+    return `${info[8]}${info[9]}`;
 }
 export default WorkList;

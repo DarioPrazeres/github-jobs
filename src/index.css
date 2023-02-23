@@ -204,7 +204,7 @@ section {
 .vacancy {
   width: 100%;
   padding: 5px;
-  height: 114px;
+  height: 120px;
   background: #fff;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
   color: #334680;
@@ -212,12 +212,13 @@ section {
   display: flex;
   align-items: center;
   position: relative;
+  margin-top: 10px;
+  margin-bottom: 30px;
 }
 .logoEnter{
   width: 90px;
   height: 90px;
   border-radius: 4px;
-  border: solid 1px saddlebrown;
 }
 .disc {
   margin-left: 7px;
@@ -249,13 +250,14 @@ section {
   justify-content: space-around;
   position: absolute;
   right: 20px;
-  bottom: 10px;
+  bottom: 5px;
   color: #B9BDCF;
 }
 .data-info{
   display: flex;
   align-items: center;
   margin: 3px;
+  font-size: 12px;
 }
 .data-info img{
   margin: 3px;
