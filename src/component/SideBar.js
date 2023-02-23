@@ -13,18 +13,20 @@ function SideBar() {
                 <input type="text"placeholder="City, state, zip code or country" className="input-City" />
             </div>
             <div className="listCities">
-                <City/>
-                <City/>
+                <City city="London" />
+                <City city="Amesterdam" />
+                <City city="New York" />
+                <City city="Berlim" />
             </div>
         </aside>
     );
 }
-function City(){
+function City(props){
     return(
         <label className="container">
             <input type="checkbox" />
             <span className="checkmark"></span>
-            London
+            {props.city}
         </label>
     )
 }

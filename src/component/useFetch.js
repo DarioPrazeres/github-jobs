@@ -4,9 +4,13 @@ const useFetch = (url) => {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    fetch(url)
-      .then((res) => res.json())
-      .then((data) => setData(data));
+    fetch(url, {mode: 'no-cors'})
+      .then((res) => {
+        console.log(res)
+        res.json()})
+      .then((data) => {
+        console.log(data)
+        setData(data)});
   }, [url]);
 
   return [data];

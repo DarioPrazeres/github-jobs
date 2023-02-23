@@ -260,3 +260,18 @@ section {
 .data-info img{
   margin: 3px;
 }
+/*-----------Footer --------------*/
+footer {
+  margin-top: 50px;
+  margin-bottom: 10px;
+}
+
+footer p {
+  text-align: center;
+  color: rgb(144, 142, 142);
+  font-size: 16px;
+}
+
+footer a {
+  color: rgb(103, 102, 102);
+}
