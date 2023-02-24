@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { DataContext } from "../App";
 import leftIcon from "../img/left.png";
 import rightIcon from "../img/right.png";
+const init = 1;
 function Control() {
     const { data, number } = useContext(DataContext);
     var count = 0;
@@ -28,7 +29,7 @@ function Control() {
 }
 function Position(props) {
     return (
-        <div className={`seta ${props.sp}`} id={props.number}>
+        <div className={`seta-1 ${props.sp}`} id={props.number}>
             {props.number}
         </div>
     )
@@ -57,6 +58,34 @@ function updateSeta(side, number) {
         update = number - 1;        
     }
     document.getElementById(update).classList.add('active');
+    elementsNear(update)
     return update;
+}
+function elementsNear(current){
+    var position1, position2;
+    if(current<3){
+        current = 1;
+        position1 = current + 1;
+        position2 = current + 2;
+    }else if(current>7) {
+        current = 8;
+        position1 = current + 1;
+        position2 = current + 2;
+    }else{
+        position1 = current - 1;
+        position2 = current + 1;
+    }
+    hiddenButton(current, position1, position2);
+    document.getElementById(position1).style.display = "flex";
+    document.getElementById(current).style.display = "flex";
+    document.getElementById(position2).style.display = "flex";
+}
+function hiddenButton(current, position1, position2){
+    for(var count=1; count<=10; count++){
+        console.log(count)
+        if(count !== current || position1 !== count || count !== position2){
+            document.getElementById(count).style.display = "none";
+        }
+    }
 }
 export default Control;

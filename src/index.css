@@ -270,7 +270,7 @@ section {
   grid-template-columns: repeat(10, 36px);
   justify-content: space-between;
 }
-.seta{
+.seta, .seta-1{
   border: 1px solid #B7BCCE;
   border-radius: 4px;
   width: 36px;
@@ -280,8 +280,12 @@ section {
   justify-content: center;
   color: #B7BCCE;
 }
+.seta-1{
+  display: none;
+}
 .active{
   background: #1E86FF;
+  color: #fff;
 }
 
 /*-----------Footer --------------*/
