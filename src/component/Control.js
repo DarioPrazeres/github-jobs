@@ -50,17 +50,13 @@ function updateSeta(side, number) {
     console.log("NUMBER", number);
     console.log("SIDE", side)
     var update = number;
-    if (side === 'right' && number >= 1 && number < 11) {
+    document.getElementById(number).classList.remove('active');
+    if (side === 'right' && number >= 1 && number < 10) {
         update = number + 1;
-        document.getElementById(update + 1).classList.remove('active');
-        document.getElementById(update - 1).classList.remove('active');
-        document.getElementById(update).classList.add('active');
     } else if (side === 'left' && number > 1) {
-        update = number - 1;
-        document.getElementById(update + 1).classList.remove('active');
-        document.getElementById(update).classList.add('active');
+        update = number - 1;        
     }
-
+    document.getElementById(update).classList.add('active');
     return update;
 }
 export default Control;
