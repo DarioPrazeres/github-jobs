@@ -3,24 +3,21 @@ import { useContext } from "react";
 import { DataContext } from "../App";
 import leftIcon from "../img/left.png";
 import rightIcon from "../img/right.png";
-const init = 1;
 function Control() {
     const { data, number } = useContext(DataContext);
-    var count = 0;
     console.log("FIRST NUMBER", number)
     return (
         <div className="control">
             <Seta seta={leftIcon} side="left" />
             {
                 data && data.jobs.map((item, index) => {
-                    if (index < 10) {
-                        if (index === 0) {
-                            return <Position sp='active' number={index + 1} key={index + 1} />
-                        } else {
-                            return <Position number={index + 1} key={index + 1} />
+                    if(index < 10){
+                        if(index<3 || index===9){
+                            return <Position name='seta-0' number={index + 1} key={index + 1} />
                         }
+                        return <Position number={index + 1} key={index + 1} />
                     }
-
+                    
                 })
             }
             <Seta seta={rightIcon} side="right" />
@@ -29,7 +26,7 @@ function Control() {
 }
 function Position(props) {
     return (
-        <div className={`seta-1 ${props.sp}`} id={props.number}>
+        <div className={props.name || 'seta-1'} id={props.number}>
             {props.number}
         </div>
     )
@@ -40,7 +37,6 @@ function Seta(props) {
     return (
         <div className='seta' onClick={() => {
             setNumber(updateSeta(props.side, number))
-
         }}>
             <img src={props.seta} alt="seta" />
         </div>
@@ -55,23 +51,23 @@ function updateSeta(side, number) {
     if (side === 'right' && number >= 1 && number < 10) {
         update = number + 1;
     } else if (side === 'left' && number > 1) {
-        update = number - 1;        
+        update = number - 1;
     }
     document.getElementById(update).classList.add('active');
     elementsNear(update)
     return update;
 }
-function elementsNear(current){
+function elementsNear(current) {
     var position1, position2;
-    if(current<3){
+    if (current < 3) {
         current = 1;
         position1 = current + 1;
         position2 = current + 2;
-    }else if(current>7) {
+    } else if (current > 7) {
         current = 8;
         position1 = current + 1;
         position2 = current + 2;
-    }else{
+    } else {
         position1 = current - 1;
         position2 = current + 1;
     }
@@ -79,11 +75,12 @@ function elementsNear(current){
     document.getElementById(position1).style.display = "flex";
     document.getElementById(current).style.display = "flex";
     document.getElementById(position2).style.display = "flex";
+    document.getElementById('10').style.display = "flex";
 }
-function hiddenButton(current, position1, position2){
-    for(var count=1; count<=10; count++){
+function hiddenButton(current, position1, position2) {
+    for (var count = 1; count <= 10; count++) {
         console.log(count)
-        if(count !== current || position1 !== count || count !== position2){
+        if (count !== current || position1 !== count || count !== position2) {
             document.getElementById(count).style.display = "none";
         }
     }

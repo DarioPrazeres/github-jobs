@@ -10,7 +10,7 @@ function WorkList() {
             {data &&
                 data.jobs.map((item, index) => {
                     if(index<=4){
-                        return <Vacancy
+                        return (<Vacancy
                         key={item.id}
                         nameEnterprise={item.company_name}
                         logo={item.company_logo}
@@ -19,7 +19,7 @@ function WorkList() {
                         cityName={item.candidate_required_location||'WorldWide'
                         }
                         day={daysAgo(item.publication_date)}
-                    />;
+                    />);
                     }
                 })}
         </div>
