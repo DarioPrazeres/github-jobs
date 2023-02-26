@@ -3,6 +3,9 @@ import { useContext } from "react";
 import { DataContext } from "../App";
 import leftIcon from "../img/left.png";
 import rightIcon from "../img/right.png";
+import moreIcon from '../img/more.png';
+const imgMore = document.createElement('img');
+imgMore.src = moreIcon;
 function Control() {
     const { data, number } = useContext(DataContext);
     console.log("FIRST NUMBER", number)
@@ -12,12 +15,14 @@ function Control() {
             {
                 data && data.jobs.map((item, index) => {
                     if(index < 10){
-                        if(index<3 || index===9){
+                        if(index<3 || index>=8){
+                            if(index===0){
+                                return <Position name='seta-0 active' number={index + 1} key={index + 1} />
+                            }
                             return <Position name='seta-0' number={index + 1} key={index + 1} />
                         }
                         return <Position number={index + 1} key={index + 1} />
-                    }
-                    
+                    }                    
                 })
             }
             <Seta seta={rightIcon} side="right" />
@@ -27,7 +32,7 @@ function Control() {
 function Position(props) {
     return (
         <div className={props.name || 'seta-1'} id={props.number}>
-            {props.number}
+            {(props.number===9?<MoreIcon/>:props.number)}
         </div>
     )
 }
@@ -42,6 +47,11 @@ function Seta(props) {
         </div>
     )
 
+}
+function MoreIcon(){
+    return(
+        <img src={moreIcon} alt="more icon" />
+    )
 }
 function updateSeta(side, number) {
     console.log("NUMBER", number);
@@ -75,7 +85,17 @@ function elementsNear(current) {
     document.getElementById(position1).style.display = "flex";
     document.getElementById(current).style.display = "flex";
     document.getElementById(position2).style.display = "flex";
+    document.getElementById('9').style.display = "flex";
     document.getElementById('10').style.display = "flex";
+    document.getElementById('9').style.border = 'none';
+    if(current>7){
+        document.getElementById('9').style.border = '1px solid #B7BCCE';
+        document.getElementById('9').innerHTML = '9';
+    }else{
+        document.getElementById('9').innerHTML = '';
+        document.getElementById('9').style.border = 'none';
+        document.getElementById('9').appendChild(imgMore);
+    }
 }
 function hiddenButton(current, position1, position2) {
     for (var count = 1; count <= 10; count++) {
