@@ -30,8 +30,17 @@ function Control() {
     );
 }
 function Position(props) {
+    const { setNumber, number } = useContext(DataContext);
     return (
-        <div className={props.name || 'seta-1'} id={props.number}>
+        <div className={props.name || 'seta-1'} id={props.number} onClick={()=>{
+            setNumber((c)=> c = props.number);
+            console.log(number);
+            
+            removeActive(number);
+            elementsNear(props.number);
+            document.getElementById(props.number).classList.add("active");
+  
+        }}>
             {(props.number===9?<MoreIcon/>:props.number)}
         </div>
     )
@@ -52,6 +61,14 @@ function MoreIcon(){
     return(
         <img src={moreIcon} alt="more icon" />
     )
+}
+function removeActive(id){
+    for (var count = 1; count <= 10; count++) {
+        console.log(count)
+        if (document.getElementById(count).classList.contains("active")) {
+            document.getElementById(count).classList.remove('active');
+        }
+    }
 }
 function updateSeta(side, number) {
     console.log("NUMBER", number);
@@ -89,10 +106,15 @@ function elementsNear(current) {
     document.getElementById('10').style.display = "flex";
     document.getElementById('9').style.border = 'none';
     if(current>7){
+        document.getElementById('1').style.display = "flex";
+        document.getElementById('2').style.display = "flex";
+        document.getElementById('2').innerHTML = '';
+        document.getElementById('2').appendChild(imgMore);
         document.getElementById('9').style.border = '1px solid #B7BCCE';
         document.getElementById('9').innerHTML = '9';
     }else{
         document.getElementById('9').innerHTML = '';
+        document.getElementById('2').innerHTML = '2';
         document.getElementById('9').style.border = 'none';
         document.getElementById('9').appendChild(imgMore);
     }

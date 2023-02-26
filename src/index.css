@@ -8,7 +8,9 @@ body {
   font-family: "Poppins";
   background: #b7bcce19;
 }
-
+section{
+  position: relative;
+}
 h1 {
   color: #282538;
   font-size: 30px;
@@ -265,11 +267,11 @@ section {
 /*------------Control STle-------*/
 .control{
   width: 300px;
-  border: solid 1px red;
   display: grid;
   grid-template-columns: repeat(10, 36px);
   gap: 10px;
-  justify-content: space-between;
+  position: absolute;
+  right: 122px;  
 }
 .seta, .seta-1, .seta-0{
   border: 1px solid #B7BCCE;

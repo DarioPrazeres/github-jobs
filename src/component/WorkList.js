@@ -3,13 +3,14 @@ import Vacancy from "./Vacancy";
 import { useContext } from "react";
 import { DataContext } from "../App";
 function WorkList() {
-    const { data } = useContext(DataContext);
+    const { data, number } = useContext(DataContext);
     //console.log(data)
     return (
         <div className="worklist">
             {data &&
                 data.jobs.map((item, index) => {
-                    if(index<=4){
+                    if((number-1)*5 <= index && (number*5) > index){
+                        console.log(index)
                         return (<Vacancy
                         key={item.id}
                         nameEnterprise={item.company_name}
