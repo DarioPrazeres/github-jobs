@@ -14,11 +14,11 @@ function Vacancy(props){
             <div className="data">
                 <div className="data-info">
                     <img src={worldIcon} alt="world icon" /> 
-                    <p>{props.cityName}</p>
+                    <p> {props.cityName}</p>
                 </div>
                 <div className="data-info">
                     <img src={clockIcon} alt="icon clock" />
-                    <p>{props.day}days ago</p>
+                    <p> {props.day} days ago</p>
                 </div>
             </div>
         </div>

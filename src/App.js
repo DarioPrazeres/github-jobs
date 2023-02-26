@@ -8,9 +8,9 @@ import useFetch from './component/useFetch';
 import Control from './component/Control';
 const DataContext = createContext();
 function App() {
-  const [data] = useFetch('https://remotive.com/api/remote-jobs?limit=100')
+  const [data] = useFetch('https://remotive.com/api/remote-jobs?limit=50')
   const [number, setNumber] = useState(1) 
-  //console.log(data && data.jobs[0])
+  console.log(data)
   return (
     <DataContext.Provider value={{data, number, setNumber}}>
       <section>
