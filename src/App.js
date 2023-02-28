@@ -8,11 +8,13 @@ import useFetch from './component/useFetch';
 import Control from './component/Control';
 const DataContext = createContext();
 function App() {
-  const [data] = useFetch('https://remotive.com/api/remote-jobs?limit=50')
+  const [data] = useFetch('https://remotive.com/api/remote-jobs?limit=50');
+  const [city, setCity] = useState('London');
+  const [status, setStatus] = useState(false);
   const [number, setNumber] = useState(1) 
   console.log(data)
   return (
-    <DataContext.Provider value={{data, number, setNumber}}>
+    <DataContext.Provider value={{data, number, setNumber, setCity, city, status, setStatus}}>
       <section>
         <Header />
         <Search />

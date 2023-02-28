@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
+import { DataContext } from "../App";
 import iconWorld from "../img/world.png"
 function SideBar() {
+    const {status, setStatus} = useContext(DataContext);
     return (
         <aside className="sidebar">
-            <div className="form-div">
-                <input type="checkbox" className="check" />
+            <div className="form-div" onClick={()=>{
+                setStatus(!status);
+            }}>
+                <input type="checkbox" className="check" checked={status} />
                 <label>Full Time</label>
             </div>
             <h3>Location</h3>
@@ -22,9 +26,13 @@ function SideBar() {
     );
 }
 function City(props){
+    const {city, setCity} = useContext(DataContext);
     return(
-        <label className="container">
-            <input type="checkbox" />
+        <label className="container" onClick={()=>{
+            setCity(props.city);
+            console.log(city);
+        }}>
+            <input type="checkbox" checked={props.city === city ? true : false} />
             <span className="checkmark"></span>
             {props.city}
         </label>
