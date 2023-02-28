@@ -100,7 +100,6 @@ section {
 .workBody {
   display: flex;
   justify-content: space-around;
-  border: solid 1px black;
   margin: 50px 100px 0px 100px;
 }
 
