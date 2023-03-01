@@ -9,7 +9,7 @@ import Control from './component/Control';
 const DataContext = createContext();
 function App() {
   const [data] = useFetch('https://remotive.com/api/remote-jobs?limit=50');
-  const [city, setCity] = useState('London');
+  const [city, setCity] = useState('');
   const [status, setStatus] = useState(false);
   const [number, setNumber] = useState(1) 
   console.log(data)

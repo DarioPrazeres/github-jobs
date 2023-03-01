@@ -3,7 +3,7 @@ import Vacancy from "./Vacancy";
 import { useContext } from "react";
 import { DataContext } from "../App";
 function WorkList() {
-    const { data, number } = useContext(DataContext);
+    const { data, number, status } = useContext(DataContext);
     //console.log(data)
     return (
         <div className="worklist">
