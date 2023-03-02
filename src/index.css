@@ -132,8 +132,19 @@ section {
   align-items: center;
   padding: 3px;
   margin: 10px 0px 30px 0px;
+  position: relative;
 }
-
+.mini-search{
+  border: #1E86FF solid 1px;
+  background-color: #1e86ff;
+  background-image: url(./img/search.png);
+  background-size: contain;
+  border-radius: 8px;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  right: 5px;
+}
 .input-City {
   margin-left: 5px;
   font-size: 14px;
@@ -297,6 +308,7 @@ section {
   background: #1E86FF;
   color: #fff;
 }
+
 /*-----------Footer --------------*/
 footer {
   margin-top: 50px;

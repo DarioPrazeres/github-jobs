@@ -3,13 +3,14 @@ import Vacancy from "./Vacancy";
 import { useContext } from "react";
 import { DataContext } from "../App";
 function WorkList() {
-    const { data, number, status } = useContext(DataContext);
-    var length = lengthArray(data, status)
-    console.log('LENGTH FUL time', length);
+    const { data, number, status, country } = useContext(DataContext);
+    var length = lengthArray(data, status, country);
+    var result = lengthArray(data, status, country);
+    console.log(result);
     return (
         <div className="worklist">
             {length.map((item, i) => {
-                if ((number - 1) * 5 <= i && (number * 5) > i){
+                if ((number - 1) * 5 <= i && (number * 5) > i) {
                     return (<Vacancy
                         key={item.id}
                         nameEnterprise={item.company_name}
@@ -26,22 +27,51 @@ function WorkList() {
         </div>
     );
 }
-function lengthArray(data, status) {
+function lengthArray(data, status, country) {
     var cont = 0;
     var a = []
-    if (status === true) {
-        data &&
-            data.jobs.map((item, index) => {
-                if (item.job_type === 'full_time') {
+    if(country.length !== 0){
+        if (status === true) {
+            data &&
+                data.jobs.map((item, index) => {
+                    if (item.job_type === 'full_time' && country === item.candidate_required_location) {
+                        a.push(item)
+                    }
+                })
+        } else {
+            data &&
+                data.jobs.map((item, index) => {
+                    if(country === item.candidate_required_location){
+                        a.push(item)
+                    }
+                })
+        }
+    }else{
+        if (status === true) {
+            data &&
+                data.jobs.map((item, index) => {
+                    if (item.job_type === 'full_time') {
+                        a.push(item)
+                    }
+                })
+        } else {
+            data &&
+                data.jobs.map((item, index) => {
                     a.push(item)
-                }
-            })
-    } else {
-        data &&
-            data.jobs.map((item, index) => {
-                a.push(item)
-            })
+                })
+        }
     }
+
+    return a;
+}
+function serachForCountry(country, data) {
+    var a = []
+    data &&
+        data.jobs.map((item, index) => {
+            if (item.candidate_required_location === country) {
+                a.push(item)
+            }
+        })
     return a;
 }
 function daysAgo(data) {
