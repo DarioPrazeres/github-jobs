@@ -5,10 +5,11 @@ function SideBar() {
     const {status, setStatus} = useContext(DataContext);
     return (
         <aside className="sidebar">
-            <div className="form-div" onClick={()=>{
-                setStatus(!status);
-            }}>
-                <input type="checkbox" className="check" checked={status} />
+            <div className="form-div" >
+                <input type="checkbox" className="check" onChange={(e)=>{
+                    setStatus(e.target.checked)
+                    console.log(status)
+                    }} />
                 <label>Full Time</label>
             </div>
             <h3>Location</h3>

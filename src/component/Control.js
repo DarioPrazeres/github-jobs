@@ -7,16 +7,17 @@ import moreIcon from '../img/more.png';
 const imgMore = document.createElement('img');
 imgMore.src = moreIcon;
 function Control() {
-    const { data, number } = useContext(DataContext);
-    console.log("FIRST NUMBER", number)
+    const { data, number, length } = useContext(DataContext);
+    console.log("FIRST NUMBER", number);
+    console.log('LENGTH', length)
     return (
         <div className="control">
-            <Seta seta={leftIcon} side="left" />
+            <Seta seta={leftIcon} side="left" length={length} />
             {
                 data && data.jobs.map((item, index) => {
-                    if(index < 10){
+                    if(index < length){
                         if(index<3 || index>=8){
-                            if(index===0){
+                            if(index === 0){
                                 return <Position name='seta-0 active' number={index + 1} key={index + 1} />
                             }
                             return <Position name='seta-0' number={index + 1} key={index + 1} />
@@ -25,7 +26,7 @@ function Control() {
                     }                    
                 })
             }
-            <Seta seta={rightIcon} side="right" />
+            <Seta seta={rightIcon} side="right" length={length}/>
         </div>
     );
 }
@@ -35,7 +36,6 @@ function Position(props) {
         <div className={props.name || 'seta-1'} id={props.number} onClick={()=>{
             setNumber((c)=> c = props.number);
             console.log(number);
-            
             removeActive(number);
             elementsNear(props.number);
             document.getElementById(props.number).classList.add("active");
@@ -50,7 +50,7 @@ function Seta(props) {
     console.log("UPDATE NUMBER", number)
     return (
         <div className='seta' onClick={() => {
-            setNumber(updateSeta(props.side, number))
+            setNumber(updateSeta(props.side, number, props.length))
         }}>
             <img src={props.seta} alt="seta" />
         </div>
@@ -62,35 +62,35 @@ function MoreIcon(){
         <img src={moreIcon} alt="more icon" />
     )
 }
-function removeActive(id){
-    for (var count = 1; count <= 10; count++) {
+function removeActive(id, length){
+    for (var count = 1; count <= length; count++) {
         console.log(count)
         if (document.getElementById(count).classList.contains("active")) {
             document.getElementById(count).classList.remove('active');
         }
     }
 }
-function updateSeta(side, number) {
+function updateSeta(side, number, length) {
     console.log("NUMBER", number);
     console.log("SIDE", side)
     var update = number;
     document.getElementById(number).classList.remove('active');
-    if (side === 'right' && number >= 1 && number < 10) {
+    if (side === 'right' && number >= 1 && number < length) {
         update = number + 1;
     } else if (side === 'left' && number > 1) {
         update = number - 1;
     }
     document.getElementById(update).classList.add('active');
-    elementsNear(update)
+    elementsNear(update, length)
     return update;
 }
-function elementsNear(current) {
+function elementsNear(current, length) {
     var position1, position2;
     if (current < 3) {
         current = 1;
         position1 = current + 1;
         position2 = current + 2;
-    } else if (current > 7) {
+    } else if (current > length-3) {
         current = 8;
         position1 = current + 1;
         position2 = current + 2;
