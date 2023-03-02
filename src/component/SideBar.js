@@ -31,35 +31,27 @@ function SideBar() {
                 </button>
             </div>
             <div className="listCities">
-                <City city="London" />
-                <City city="Amesterdam" />
-                <City city="New York" />
-                <City city="Berlim" />
+                <City country="UK"  />
+                <City country="USA" />
+                <City country="Canada" />
+                <City country="Germany" />
             </div>
         </aside>
     );
 }
 function City(props) {
-    const { city, setCity } = useContext(DataContext);
+    const { country, setCountry} = useContext(DataContext);
     return (
-        <label className="container" onClick={() => {
-            setCity(props.city);
-            console.log(city);
-        }}>
-            <input type="checkbox" checked={props.city === city ? true : false} />
+        <label className="container" >
+            <input type="checkbox" checked={props.country === country ? true : false} onChange={(e) => {
+                    console.log(e.target.checked);
+                    if(e.target.checked){
+                        setCountry(props.country)
+                    }
+                }} />
             <span className="checkmark"></span>
-            {props.city}
+            {props.country}
         </label>
     )
-}
-function serachForCountry(country, data) {
-    var a = []
-    data &&
-        data.jobs.map((item, index) => {
-            if(country === item.candidate_required_location){
-                a.push(item)
-            }
-        })
-    return a;
 }
 export default SideBar;

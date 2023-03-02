@@ -16,7 +16,7 @@ function App() {
   const [length, setLength] = useState(50/5);
   console.log(data)
   return (
-    <DataContext.Provider value={{data, number, setNumber, setCity, city, status, setStatus, length, setLength, country, setCountry}}>
+    <DataContext.Provider value={{data, number, setNumber, status, setStatus, length, setLength, country, setCountry}}>
       <section>
         <Header />
         <Search />
