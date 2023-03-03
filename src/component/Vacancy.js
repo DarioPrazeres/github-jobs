@@ -3,7 +3,6 @@ import clockIcon from "../img/clock.png";
 import worldIcon from "../img/world.png";
 
 function Vacancy(props){
-    console.log('Entrei')
     return(
         <div className="vacancy">
             <img src={props.logo} className="logoEnter" alt="logo enterprise"/>

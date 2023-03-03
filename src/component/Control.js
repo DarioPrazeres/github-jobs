@@ -8,8 +8,6 @@ const imgMore = document.createElement('img');
 imgMore.src = moreIcon;
 function Control() {
     const { data, number, length } = useContext(DataContext);
-    console.log("FIRST NUMBER", number);
-    console.log('LENGTH', length)
     return (
         <div className="control">
             <Seta seta={leftIcon} side="left" length={length} />
@@ -35,7 +33,6 @@ function Position(props) {
     return (
         <div className={props.name || 'seta-1'} id={props.number} onClick={()=>{
             setNumber((c)=> c = props.number);
-            console.log(number);
             removeActive(number);
             elementsNear(props.number);
             document.getElementById(props.number).classList.add("active");
@@ -47,7 +44,6 @@ function Position(props) {
 }
 function Seta(props) {
     const { number, setNumber } = useContext(DataContext);
-    console.log("UPDATE NUMBER", number)
     return (
         <div className='seta' onClick={() => {
             setNumber(updateSeta(props.side, number, props.length))
@@ -64,15 +60,12 @@ function MoreIcon(){
 }
 function removeActive(id, length){
     for (var count = 1; count <= length; count++) {
-        console.log(count)
         if (document.getElementById(count).classList.contains("active")) {
             document.getElementById(count).classList.remove('active');
         }
     }
 }
 function updateSeta(side, number, length) {
-    console.log("NUMBER", number);
-    console.log("SIDE", side)
     var update = number;
     document.getElementById(number).classList.remove('active');
     if (side === 'right' && number >= 1 && number < length) {
@@ -121,7 +114,6 @@ function elementsNear(current, length) {
 }
 function hiddenButton(current, position1, position2) {
     for (var count = 1; count <= 10; count++) {
-        console.log(count)
         if (count !== current || position1 !== count || count !== position2) {
             document.getElementById(count).style.display = "none";
         }
