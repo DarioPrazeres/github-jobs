@@ -7,7 +7,7 @@ import moreIcon from '../img/more.png';
 const imgMore = document.createElement('img');
 imgMore.src = moreIcon;
 function Control() {
-    const { data, number, length } = useContext(DataContext);
+    const { data, length } = useContext(DataContext);
     return (
         <div className="control">
             <Seta seta={leftIcon} side="left" length={length} />

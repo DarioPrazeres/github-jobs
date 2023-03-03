@@ -2,6 +2,7 @@ import React from "react";
 import Vacancy from "./Vacancy";
 import { useContext } from "react";
 import { DataContext } from "../App";
+
 function WorkList() {
     const { data, number, status, country } = useContext(DataContext);
     var length = lengthArray(data, status, country);
@@ -28,7 +29,6 @@ function WorkList() {
     );
 }
 function lengthArray(data, status, country) {
-    var cont = 0;
     var a = []
     if(country.length !== 0){
         if (status === true) {
@@ -62,16 +62,6 @@ function lengthArray(data, status, country) {
         }
     }
 
-    return a;
-}
-function serachForCountry(country, data) {
-    var a = []
-    data &&
-        data.jobs.map((item, index) => {
-            if (item.candidate_required_location === country) {
-                a.push(item)
-            }
-        })
     return a;
 }
 function daysAgo(data) {

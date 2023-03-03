@@ -1,11 +1,10 @@
 import React, { useContext, useState } from "react";
 import { DataContext } from "../App";
 import iconWorld from "../img/world.png"
-import iconSearch from "../img/search.png"
+
 function SideBar() {
-    const [input, setInput] = useState('')
-    var countries;
-    const { status, setStatus, setCountry, country, data } = useContext(DataContext);
+    const [input, setInput] = useState('');
+    const { setStatus, setCountry } = useContext(DataContext);
     return (
         <aside className="sidebar">
             <div className="form-div" >
