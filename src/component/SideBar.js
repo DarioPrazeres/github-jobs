@@ -17,7 +17,7 @@ function SideBar() {
             <h3>Location</h3>
             <div className="form-city">
                 <img src={iconWorld} alt="world Icon" className="worldIcon" />
-                <input type="text" placeholder="City, state, zip code or country" className="input-City" value={input || ""} onChange={(e) => {
+                <input type="text" placeholder="Country Name" className="input-City" value={input || ""} onChange={(e) => {
                     setInput(e.target.value)
                 }} />
                 <button className="mini-search" onClick={(e) => {

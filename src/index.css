@@ -67,6 +67,7 @@ section {
 
 .inputSearch {
   border: none;
+  outline: none;
   font-family: 'Roboto' sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -152,7 +153,10 @@ section {
   outline: none;
   border: none;
 }
-
+.input-City:active{
+  outline: none;
+  border: none;
+}
 .container {
   display: flex;
   align-items: center;
