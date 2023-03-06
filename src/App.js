@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState} from 'react';
 import { createContext } from 'react';
 import Header from './component/Header';
 import Search from './component/Search';
@@ -6,7 +6,6 @@ import Work from './component/Work';
 import Footer from './component/Footer';
 import useFetch from './component/useFetch';
 import Control from './component/Control';
-import { IdContext } from '.';
 const DataContext = createContext();
 
 function App() {
@@ -16,10 +15,9 @@ function App() {
   const [country, setCountry] = useState('');
   const [length, setLength] = useState(50/5);
   const [data] = useFetch(`https://remotive.com/api/remote-jobs?search=${category}&limit=200`);
-  const {idElement, setIdElement} = useContext(IdContext)
   console.log(data)
   return (
-    <DataContext.Provider value={{data, number, setNumber, status, setStatus, length, setLength, country, setCountry, category, setCategory, idElement, setIdElement}}>
+    <DataContext.Provider value={{data, number, setNumber, status, setStatus, length, setLength, country, setCountry, category, setCategory}}>
       <section>
         <Header />
         <Search />
