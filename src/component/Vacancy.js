@@ -1,11 +1,16 @@
 import React from "react";
 import clockIcon from "../img/clock.png";
 import worldIcon from "../img/world.png";
-
+import { useContext } from "react";
+import { DataContext } from "../App";
 function Vacancy(props){
+    const { setIdElement, IdElement} = useContext(DataContext);
     return(
         <div className="vacancy">
-            <a href="/blogs"></a>
+            <a href="/blogs" onClick={()=>{
+                setIdElement(props.key);
+                console.log('HERE!', IdElement)
+            }}>
             <img src={props.logo} className="logoEnter" alt="logo enterprise"/>
             <div className="disc">
                 <h4 className="nameEnter">{props.nameEnterprise}</h4>
@@ -22,6 +27,7 @@ function Vacancy(props){
                     <p> {props.day} days ago</p>
                 </div>
             </div>
+            </a>
         </div>
     );
 }
