@@ -1,11 +1,10 @@
 import React, { useState} from 'react';
 import { createContext } from 'react';
-import Header from './component/Header';
-import Search from './component/Search';
-import Work from './component/Work';
-import Footer from './component/Footer';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import useFetch from './component/useFetch';
-import Control from './component/Control';
+import Home from './component/Home';
+import DetailVacancy from './component/DetailVacancy';
+import Layout from "./component/pages/Layout"
 const DataContext = createContext();
 
 function App() {
@@ -18,13 +17,14 @@ function App() {
   console.log(data)
   return (
     <DataContext.Provider value={{data, number, setNumber, status, setStatus, length, setLength, country, setCountry, category, setCategory}}>
-      <section>
-        <Header />
-        <Search />
-        <Work />
-        <Control />
-        <Footer />
-      </section>
+          <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="blogs" element={<DetailVacancy key={length} />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
     </DataContext.Provider>
   );
 }
