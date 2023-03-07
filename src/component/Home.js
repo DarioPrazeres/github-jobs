@@ -8,7 +8,7 @@ import Control from './Control';
 
 function Home() {
   return (
-      <section>
+      <section id='body'>
         <Header />
         <Search />
         <Work />
