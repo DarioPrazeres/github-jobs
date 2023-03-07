@@ -6,8 +6,10 @@ function Vacancy(props){
     const { setId, idItem } = useContext(DataContext);
     return(
         <div className="vacancy" onClick={()=>{
+            //document.getElementById('dp').innerHTML = props.desc;
             setId(props.idTem);
             console.log(idItem);
+
         }}>
             <img src={props.logo} className="logoEnter" alt="logo enterprise"/>
             <div className="disc">

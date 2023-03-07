@@ -344,7 +344,6 @@ section {
 
 #detail {
   display: block;
-  border: solid rgb(138, 138, 138) 2px;
   justify-content: space-between;
   width: 100%;
 }
@@ -354,13 +353,11 @@ section {
 }
 
 .bar {
-  border: solid 1px red;
   min-height: 400px;
   width: 350px;
 }
 
 .detail-boby {
-  border: solid 1px black;
   width: 90%;
 }
 

@@ -1,4 +1,5 @@
 import React from "react";
+import Parser from "html-react-parser";
 import { daysAgo } from "./WorkList";
 import { DataContext } from "../App";
 import { useContext, useState } from "react";
@@ -15,7 +16,7 @@ const DetailVacancy = () => {
                     if (item.id === idItem) {
                         console.log('Entrei', item.id)
                         return (
-                            <div id="detail">
+                            <div id="detail" key={item.id+1}>
                                 ad
                                 <div className="detail-Vacancy">
                                     <Bar url={item.url} />
@@ -26,20 +27,13 @@ const DetailVacancy = () => {
                                             logo={item.company_logo}
                                             cityName={item.candidate_required_location || 'WorldWide'
                                             } />
-                                        {
-                                            data && data.jobs.map((item) => {
-                                                if (item.id === idItem) {
-                                                    return (
-                                                        <div id="description">
-                                                            {`${DOMParser().parseFromString(item.description, "text/xml").innerHTML}`}
-                                                        </div>
-                                                    )
-                                                }
-                                            })
-                                        }
+                                        <div id="description">
+                                            {
+                                                Parser(item.description)
+                                            }       
+                                       </div>
                                     </div>
                                 </div>
-                                <div>dad</div>
                             </div>
                         )
                     }
