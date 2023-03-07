@@ -8,9 +8,11 @@ body {
   font-family: "Poppins";
   background: #b7bcce19;
 }
-section{
+
+section {
   position: relative;
 }
+
 h1 {
   color: #282538;
   font-size: 30px;
@@ -135,7 +137,8 @@ section {
   margin: 10px 0px 30px 0px;
   position: relative;
 }
-.mini-search{
+
+.mini-search {
   border: #1E86FF solid 1px;
   background-color: #1e86ff;
   background-image: url(./img/search.png);
@@ -146,6 +149,7 @@ section {
   position: absolute;
   right: 5px;
 }
+
 .input-City {
   margin-left: 5px;
   font-size: 14px;
@@ -153,10 +157,12 @@ section {
   outline: none;
   border: none;
 }
-.input-City:active{
+
+.input-City:active {
   outline: none;
   border: none;
 }
+
 .container {
   display: flex;
   align-items: center;
@@ -192,6 +198,7 @@ section {
   background-color: #eee;
   border-radius: 50%;
 }
+
 .container:hover input~.checkmark {
   background-color: #ccc;
 }
@@ -199,14 +206,17 @@ section {
 .container input:checked~.checkmark {
   background-color: #2196F3;
 }
+
 .checkmark:after {
   content: "";
   position: absolute;
   display: none;
 }
+
 .container input:checked~.checkmark:after {
   display: block;
 }
+
 .container .checkmark:after {
   top: 8px;
   left: 8px;
@@ -217,7 +227,7 @@ section {
 }
 
 /*---------VACANCY style--------*/
-.vacancy{
+.vacancy {
   text-decoration: none;
   width: 100%;
   padding: 5px;
@@ -232,11 +242,13 @@ section {
   margin-top: 10px;
   margin-bottom: 30px;
 }
-.logoEnter{
+
+.logoEnter, .emp .logoEnter  {
   width: 90px;
   height: 90px;
   border-radius: 4px;
 }
+
 .disc {
   margin-left: 7px;
 }
@@ -262,33 +274,41 @@ section {
   align-items: center;
   justify-content: center;
 }
-.data{
+
+.data {
   display: flex;
   justify-content: space-around;
   position: absolute;
   right: 20px;
   bottom: 5px;
-  color: #B9BDCF;
+
 }
-.data-info{
+
+.data-info {
   display: flex;
   align-items: center;
   margin: 3px;
   font-size: 12px;
+  color: #B9BDCF;
 }
-.data-info img{
+
+.data-info img {
   margin: 3px;
 }
+
 /*------------Control STle-------*/
-.control{
+.control {
   width: 300px;
   display: grid;
   grid-template-columns: repeat(10, 36px);
   gap: 10px;
   position: absolute;
-  right: 122px;  
+  right: 122px;
 }
-.seta, .seta-1, .seta-0{
+
+.seta,
+.seta-1,
+.seta-0 {
   border: 1px solid #B7BCCE;
   border-radius: 4px;
   width: 36px;
@@ -300,20 +320,96 @@ section {
   margin: 5px;
   margin-left: 10px;
 }
-.seta:hover, .seta-1:hover, .seta-0:hover{
+
+.seta:hover,
+.seta-1:hover,
+.seta-0:hover {
   border: solid 1px #1E86FF;
 }
-.seta-1{
+
+.seta-1 {
   display: none;
 }
-.seta-0{
+
+.seta-0 {
   display: flex;
 }
-.active{
+
+.active {
   background: #1E86FF;
   color: #fff;
 }
 
+/*-----------Detail Vacancy -----------*/
+
+#detail {
+  display: block;
+  border: solid rgb(138, 138, 138) 2px;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.detail-Vacancy {
+  display: flex;
+}
+
+.bar {
+  border: solid 1px red;
+  min-height: 400px;
+  width: 350px;
+}
+
+.detail-boby {
+  border: solid 1px black;
+  width: 90%;
+}
+
+#description {
+  color: #334680;
+}
+
+.apply {
+  color: #B9BDCF;
+}
+
+.applyLink,
+.btnBack {
+  text-decoration: none;
+  color: #1E86FF;
+}
+
+.btnBack {
+  font-size: 18px;
+  border: none;
+  background: none;
+}
+.emp{
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.emp .text{
+  margin-left: 10px;
+}
+.emp .logoEnter{
+  border: solid 1px #334680;
+}
+.emp h3{
+  color: #334680;
+}
+.headerDetail h1, title{
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+  color: #334680;
+  margin-right: 10px;
+}
+.headerDetail{
+  display: flex;
+}
 /*-----------Footer --------------*/
 footer {
   margin-top: 50px;

@@ -14,6 +14,7 @@ function WorkList() {
                 if ((number - 1) * 5 <= i && (number * 5) > i) {
                     return (<Vacancy
                         key={item.id}
+                        idTem={item.id}
                         nameEnterprise={item.company_name}
                         logo={item.company_logo}
                         namePosition={item.title}
@@ -21,6 +22,7 @@ function WorkList() {
                         cityName={item.candidate_required_location || 'WorldWide'
                         }
                         day={daysAgo(item.publication_date)}
+                        desc = {item.description} 
                     />);
                 }
             })
@@ -69,4 +71,5 @@ function daysAgo(data) {
     info.split('-');
     return `${info[8]}${info[9]}`;
 }
+export {daysAgo};
 export default WorkList;
