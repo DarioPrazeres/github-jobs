@@ -6,7 +6,7 @@ function Search(){
     const {category, setCategory} = useContext(DataContext);
     const [input, setInput] = useState('');
     return(
-        <section className="search">
+        <section className="search" id="idea">
             <div className="formSearch">
                 <img className="iconBag" src={workIcon} alt="Suit case" />
                 <input placeholder="Frontend, Backend or Fullstack" className="inputSearch" value={input || ''} onChange={(e)=>{

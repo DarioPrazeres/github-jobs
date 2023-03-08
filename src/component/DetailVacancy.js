@@ -2,22 +2,20 @@ import React from "react";
 import Parser from "html-react-parser";
 import { daysAgo } from "./WorkList";
 import { DataContext } from "../App";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import clockIcon from "../img/clock.png";
 import worldIcon from "../img/world.png";
 //id:1609007
 const DetailVacancy = () => {
-    const { data, idItem, setId } = useContext(DataContext);
+    const { data, idItem} = useContext(DataContext);
     return (
         <section id="dt">
-            dad
             {
                 data && data.jobs.map((item) => {
                     if (item.id === idItem) {
                         console.log('Entrei', item.id)
                         return (
                             <div id="detail" key={item.id+1}>
-                                ad
                                 <div className="detail-Vacancy">
                                     <Bar url={item.url} />
                                     <div className="detail-boby">
@@ -60,7 +58,10 @@ function EmpDetail(props) {
 function Bar(props) {
     return (
         <div className="bar">
-            <button className="btnBack">Back To Search</button>
+            <button className="btnBack" onClick={()=>{
+                document.getElementById('dt').style.display = 'none';
+                document.getElementById('body').style.display = 'block'
+            }}>Back To Search</button>
             <h4 className="apply">HOW TO APPLY</h4>
             <a href={props.url} className="applyLink">Apply Here</a>
         </div>
@@ -82,16 +83,4 @@ function DataInfo(props) {
         </div>
     )
 }
-function Discription(props) {
-    document.getElementById('description').innerHTML = props.desc;
-    document.getElementById('description').style.display = 'block';
-    return (
-        <div>
-            <div id="description">
-                
-            </div>
-        </div>
-    )
-}
-
 export default DetailVacancy;
