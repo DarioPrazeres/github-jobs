@@ -355,6 +355,7 @@ section {
 .bar {
   min-height: 400px;
   width: 350px;
+  margin-right: 10px;
 }
 
 .detail-boby {

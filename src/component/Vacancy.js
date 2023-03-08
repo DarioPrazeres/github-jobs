@@ -6,7 +6,6 @@ function Vacancy(props){
     const { setId, idItem } = useContext(DataContext);
     return(
         <div className="vacancy" onClick={()=>{
-            //document.getElementById('dp').innerHTML = props.desc;
             setId(props.idTem);
             console.log(idItem);
 

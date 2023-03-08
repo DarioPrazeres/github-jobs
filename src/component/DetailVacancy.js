@@ -62,7 +62,7 @@ function Bar(props) {
         <div className="bar">
             <button className="btnBack">Back To Search</button>
             <h4 className="apply">HOW TO APPLY</h4>
-            <a href={props.url} className="applyLink">Please Click Here with you apply this position</a>
+            <a href={props.url} className="applyLink">Apply Here</a>
         </div>
     )
 }
