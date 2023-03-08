@@ -36,7 +36,7 @@
 
 ## Overview
 
-![screenshot](https://user-images.githubusercontent.com/16707738/92399059-5716eb00-f132-11ea-8b14-bcacdc8ec97b.png)
+![screenshot](https://github.com/DarioPrazeres/github-jobs/blob/main/src/img/Banner.png)
 
 This project is a clone with GitHub Jobs where you can find and search employ. The search is based in name of country, category and full time or not. 
 At least you can see how to apply with a employ if you click it. 
