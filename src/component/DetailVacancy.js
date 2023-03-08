@@ -13,7 +13,6 @@ const DetailVacancy = () => {
             {
                 data && data.jobs.map((item) => {
                     if (item.id === idItem) {
-                        console.log('Entrei', item.id)
                         return (
                             <div id="detail" key={item.id+1}>
                                 <div className="detail-Vacancy">

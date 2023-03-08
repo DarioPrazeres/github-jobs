@@ -7,7 +7,6 @@ function WorkList() {
     const { data, number, status, country } = useContext(DataContext);
     var length = lengthArray(data, status, country);
     var result = lengthArray(data, status, country);
-    console.log(result);
     return (
         <div className="worklist">
             {length.map((item, i) => {

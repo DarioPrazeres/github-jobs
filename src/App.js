@@ -15,7 +15,6 @@ function App() {
   const [length, setLength] = useState(50/5);
   const [idItem, setId] = useState();
   const [data] = useFetch(`https://remotive.com/api/remote-jobs?search=${category}&limit=200`);
-  console.log(data)
   return (
     <DataContext.Provider value={{data, number, setNumber, status, setStatus, length, setLength, country, setCountry, category, setCategory, idItem, setId}}>
       <Header/>

@@ -17,7 +17,6 @@ function Search(){
                         alert('insert real information');
                     }else{
                         setCategory(input);
-                        console.log(category)
                     }
                 }}>Search</button>
             </div>

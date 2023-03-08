@@ -7,7 +7,6 @@ function Vacancy(props){
     return(
         <div className="vacancy" onClick={()=>{
             setId(props.idTem);
-            console.log(idItem);
             document.getElementById('body').style.display = 'none'
         }}>
             <img src={props.logo} className="logoEnter" alt="logo enterprise"/>
